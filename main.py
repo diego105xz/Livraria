@@ -1,14 +1,19 @@
 from funcoes.cadastrar_livro import cadastrar_livro
 from funcoes.cadastrar_usuario import cadastrar_usuario
-from funcoes.emprestimo import emprestar_livro
+from funcoes.alugar_livro import alugar_livro
+from funcoes.devolver_livro import devolver_livro
+from funcoes.consultar_livro import consultar_livro
+from funcoes.gerar_relatorio import gerar_relatorio
 
-print("------------------------------------\n----Bem vindo a nossa Biblioteca----\n------------------------------------")
+
 
 def menu():
-    print("\n=====MENU=====")
+    print("------------------------------------\n----Bem vindo a nossa Biblioteca----\n------------------------------------")
+
+    print("\n====== MENU ======\n")
     print("1. Cadastrar livro")
     print("2. Cadastrar usuario")
-    print("3. Emprestar livro")
+    print("3. Alugar livro")
     print("4. Devolver livro")
     print("5. Consultar livro")
     print("6. Gerar Relatório")
@@ -19,7 +24,8 @@ def main():
 
     menu()
 
-    opcao = input("Selecione uma opção: ")
+    opcao = input("\nSelecione uma opção: ")
+
 
     if opcao == "1":
         cadastrar_livro()
@@ -28,18 +34,24 @@ def main():
         cadastrar_usuario()
 
     elif opcao == "3":
-        emprestar_livro()
+        alugar_livro()
 
-    # elif opcao == 4:
+    elif opcao == "4":
+        devolver_livro()
 
-    # elif opcao == 5:
+    elif opcao == "5":
+        consultar_livro()
 
-    # elif opcao == 6:
+    elif opcao == "6":
+        gerar_relatorio()
 
-    # elif opcao == 0:
+    elif opcao == "0":
+        print("Programa Finalizado!")
 
     else:
-        print("Opção inválida. Por favor, selecione uma opção válida.")
+        print("\nOpção inválida. Por favor, selecione uma opção válida.")
+
+        main()
         
 if __name__ == "__main__":
     main()
