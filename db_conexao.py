@@ -1,7 +1,6 @@
 import psycopg2
 from psycopg2 import Error
 
-#ACESSANDO O BANCO DE DADOS POSTGRESQL
 def conectar():
     try:
         db_config = {
@@ -16,4 +15,3 @@ def conectar():
 
     except (Exception, Error) as error:
         print("Erro ao conectar ao banco de dados:", error)
-

@@ -6,16 +6,19 @@ def cadastrar_usuario():
         conn = db_conexao.conectar()
         cursor = conn.cursor()
 
-        nome = input("Digite o nome de usuario: ")
-        tel = input("Digite o telefone: ")
-        email = input("Digite o email: ")
+        nome = input("\nDigite o nome de usuário: ")
+        tel = input("\nDigite o telefone: ")
+        email = input("\nDigite o email: ")
 
         cursor.execute("INSERT INTO usuarios (nome, tel, email) VALUES (%s, %s, %s)", (nome, tel, email))
         conn.commit()
-        print("Usuário cadastrado com sucesso!")
+        print("\nUsuário cadastrado com sucesso!")
 
         cursor.close()
         conn.close()
+        
+        from main import main
+        main() 
 
     except (Exception, Error) as error:
-        print("Erro ao cadastrar o usuário:", error)
+        print("\nErro ao cadastrar o usuário:", error)

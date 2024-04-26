@@ -5,11 +5,8 @@ from funcoes.devolver_livro import devolver_livro
 from funcoes.consultar_livro import consultar_livro
 from funcoes.gerar_relatorio import gerar_relatorio
 
-
-
 def menu():
     print("------------------------------------\n----Bem vindo a nossa Biblioteca----\n------------------------------------")
-
     print("\n====== MENU ======\n")
     print("1. Cadastrar livro")
     print("2. Cadastrar usuario")
@@ -19,13 +16,10 @@ def menu():
     print("6. Gerar Relatório")
     print("0. Sair")
 
-
 def main():
 
     menu()
-
     opcao = input("\nSelecione uma opção: ")
-
 
     if opcao == "1":
         cadastrar_livro()
@@ -50,7 +44,6 @@ def main():
 
     else:
         print("\nOpção inválida. Por favor, selecione uma opção válida.")
-
         main()
         
 if __name__ == "__main__":
